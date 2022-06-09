@@ -109,6 +109,9 @@ h5{
     body,.people, .review{
         flex-direction: row;
     }
+    body{
+        justify-content: center;
+    }
     .people{
         margin: 0 5rem;
         justify-content: space-between;
@@ -116,7 +119,7 @@ h5{
         align-items: flex-start;
     }
     .container{
-        width: 100%;
+        width: 75rem;
         display: grid;
         grid-template-areas: 
         'header review' 
