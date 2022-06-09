@@ -11,8 +11,160 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Mobile version */
 body{
+    font-family: var(--spartan);
     font-size: 15px;
     display: flex;
     min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+.container{
+    background-image: url(./images/bg-pattern-top-mobile.svg),url(./images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
+    width: 375px;
+}
+h1{
+    color: var(--dark-magenta);
+    font-size: 40px;
+    text-align: center;
+    margin: 50px 20px 20px 20px;
+}
+.caption{
+    color: var(--dark-grayish-mag);
+    text-align: center;
+    line-height: 25px;
+    font-size: 20px;
+    margin: 0 10px 40px 10px;
+}
+.review{
+    background-color: var(--light-grayish-mag);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px;
+}
+.star{
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+}
+.review svg{
+    margin: 4px;
+}
+.review p{
+    padding:0 0 20px 0;
+    color: var(--dark-magenta);
+    font-weight: 700;
+}
+.people{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6.25rem;
+}
+.person{
+    width: 18.75rem;
+    color: var(--white);
+    margin: 20px;
+    background-color: hsl(300, 43%, 22%);
+    margin: 10px;
+    border-radius: 10px;
+    display: grid;
+    grid-template: 
+    'foto name name name' 
+    'foto verify verify verify'
+    'parag parag parag parag';
+}
+.person img{
+    border-radius: 50%;
+    width: 50%;
+    grid-area: foto;
+    margin: 2.5rem 0 1.875rem 1.25rem;
+}
+h4{
+    margin-top: 2.8125rem;
+    grid-area: name;
+}
+h5{
+    font-size: 0.9375rem;
+    margin-bottom: 1.5625rem;
+    font-weight: 100;
+    color: hsla(333, 80%, 67%, 0.5);
+    grid-area: verify;
+}
+.person p{
+    margin: 0 1.25rem 2.5rem 1.25rem;
+    line-height: 1.25rem;
+    text-align: left;
+    grid-area: parag;
+}
+
+/* Desktop version */
+@media only screen and (min-width:62.5rem) {
+    body,.people, .review{
+        flex-direction: row;
+    }
+    .people{
+        margin: 0 5rem;
+        justify-content: space-between;
+        grid-area: people;
+        align-items: flex-start;
+    }
+    .container{
+        width: 100%;
+        display: grid;
+        grid-template-areas: 
+        'header review' 
+        'people people';
+        grid-template-columns: 50% 50%;
+        background-image: url(./images/bg-pattern-top-desktop.svg),url(./images/bg-pattern-bottom-desktop.svg);
+    }
+    .rated{
+        grid-area: review;
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 5rem 0 0;
+        padding-top: 3.125rem;
+    }
+    .review{
+        height: 3.75rem;
+        width: 25rem;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+    }
+    .review:nth-child(2){
+        margin: 0.9375rem 0 0.9375rem 5rem;
+    }
+    .review:nth-child(3){
+        margin: 0 0 0.9375rem 10rem;
+    }
+    header{
+        grid-area: header;
+        margin: 2rem 0 0 5rem;
+        padding-right: 4.5rem;
+    }
+    h1{
+        font-size: 3.125rem;
+    }
+    h1,.caption{
+        text-align: left;
+    }
+    .review p{
+        padding: 0;
+    }
+    .person{
+        width: 21rem;
+    }
+    .person:nth-child(2){
+        margin-top: 2.5rem;
+    }
+    .person:nth-child(3){
+        margin-top: 5rem;
+    }
 }
